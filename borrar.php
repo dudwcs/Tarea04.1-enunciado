@@ -30,7 +30,7 @@ function borrar_libro(int $cod): bool
             $conProyecto->commit();
         else
             $conProyecto->rollBack();
-    } catch (PDOException $ex) {
+    } catch (Exception $ex) {
         $conProyecto->rollBack();
         $exito = false;
         echo "Ocurrió un error al borrar el libro con book_id $cod, mensaje: " . $ex->getMessage();
